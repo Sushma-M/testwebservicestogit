@@ -1,0 +1,39 @@
+<wm-page layouttype="three-column" columns="3" data-ng-controller="MainPageController" name="mainpage">
+    <wm-header content="header" name="header" height="auto"></wm-header>
+    <wm-top-nav name="top-nav" content="topnav"></wm-top-nav>
+    <wm-content name="content">
+        <wm-row name="contentRow">
+            <wm-left-panel contentwidth="2" name="leftpanel" content="leftnav"></wm-left-panel>
+            <wm-column class="app-content-column" columnwidth="8" paddingleft="15" paddingright="15" name="mainContent">
+                <wm-composite widget="text" name="composite1">
+                    <wm-label class="col-md-2" name="label2" caption="Source"></wm-label>
+                    <wm-text name="text1"></wm-text>
+                </wm-composite>
+                <wm-composite widget="text" name="composite2">
+                    <wm-label class="col-md-2" name="label3" caption="Destination"></wm-label>
+                    <wm-text name="text2"></wm-text>
+                </wm-composite>
+                <wm-button name="button1" on-click="GoogleapisInvoke"></wm-button>
+                <wm-label name="label4" width="172" height="29" caption="bind:Variables.GoogleapisInvoke.dataSet.route.leg.distance.text"></wm-label>
+                <wm-grid name="grid1" dataset="bind:Variables.GoogleapisInvoke.dataSet">
+                    <wm-grid-column binding="status" caption="status" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                    <wm-grid-column binding="route.bounds.southwest.lng" caption="route.bounds.southwest.lng" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                    <wm-grid-column binding="route.bounds.southwest.lat" caption="route.bounds.southwest.lat" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                    <wm-grid-column binding="route.bounds.northeast.lng" caption="route.bounds.northeast.lng" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                    <wm-grid-column binding="route.bounds.northeast.lat" caption="route.bounds.northeast.lat" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                    <wm-grid-column binding="route.summary" caption="route.summary" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                    <wm-grid-column binding="route.leg.distance.text" caption="route.leg.distance.text" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                    <wm-grid-column binding="route.leg.distance.value" caption="route.leg.distance.value" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                    <wm-grid-column binding="route.leg.duration.text" caption="route.leg.duration.text" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                    <wm-grid-column binding="route.leg.duration.value" caption="route.leg.duration.value" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                </wm-grid>
+            </wm-column>
+            <wm-right-panel contentwidth="2" name="rightpanel" content="rightnav"></wm-right-panel>
+        </wm-row>
+    </wm-content>
+    <wm-footer name="footer" content="footer"></wm-footer>
+    <wm-view class="dialog-view" name="view1">
+        <wm-confirmdialog name="notificationconfirmdialog" controller="NotificationDialogController" notificationdialog="confirm" message="{{notification.text}}" title="confirm" oktext="{{notification.okButtonText}}" canceltext="{{notification.cancelButtonText}}"
+        on-ok="variableOnOk()" on-cancel="variableOnCancel()" on-close="variableOnClose()"></wm-confirmdialog>
+    </wm-view>
+</wm-page>

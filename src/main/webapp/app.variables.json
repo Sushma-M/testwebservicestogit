@@ -1,0 +1,53 @@
+{
+	"goToPage-Main": {
+		"category": "wm.NavigationVariable",
+		"operation": "gotoPage",
+		"pageName": "Main",
+		"_id": "wm-wm.NavigationVariable1389180517517",
+		"name": "goToPage-Main",
+		"owner": "App"
+	},
+	"supportedLocale": {
+		"name": "supportedLocale",
+		"type": "string",
+		"isList": false,
+		"owner": "App",
+		"dataSet": {
+			"en": "English"
+		},
+		"dataBinding": {
+			"dataValue": ""
+		},
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-wm.Variable1402640443182"
+	},
+	"GoogleapisInvoke": {
+		"name": "GoogleapisInvoke",
+		"type": "directionsresponse",
+		"isList": false,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": {
+			"origin": "bind:Widgets.text1.datavalue",
+			"destination": "bind:Widgets.text2.datavalue",
+			"sensor": "false"
+		},
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "invoke",
+		"service": "googleapis",
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"onSuccess": "notificationVariable1",
+		"serviceType": "RestService",
+		"category": "wm.ServiceVariable",
+		"_id": "wm-wm.ServiceVariable1408772313818"
+	}
+}

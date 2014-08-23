@@ -1,0 +1,13 @@
+{
+	"notificationVariable1": {
+		"owner": "Page",
+		"operation": "confirm",
+		"dataBinding": {
+			"text": "Successs",
+			"okButtonText": "",
+			"cancelButtonText": ""
+		},
+		"category": "wm.NotificationVariable",
+		"_id": "wm-wm.NotificationVariable1408772376602"
+	}
+}
